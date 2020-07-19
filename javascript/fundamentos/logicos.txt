@@ -1,0 +1,19 @@
+Tabela Verdade:
+  e: Basta um falso para que o resultado final seja falso também
+    v e v -> v
+    v e f -> f
+    f e ? -> f
+
+  ou: Basta um verdadeiro para que o resultado final seja verdadeiro também
+    v ou ? -> v
+    f ou v -> v
+    f ou ? -> ?
+
+  xor(ou exclusivo): Para que o resultado dê verdadeiro é necessário que os dois operandos sejam diferentes
+    v xor v -> f
+    v xor f -> v
+    f xor f -> v
+
+  !(negação lógica):
+    !v -> f
+    !f -> v

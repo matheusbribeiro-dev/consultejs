@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+<body class='conteudo exercicio'>
+    <div>
+        <a href='https://www.cod3r.com.br'>Cod3r</a>
+    </div>
+    <div id='primeiro'>
+        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
+    </div>
+    <script>
+      const img = document.querySelector('img')
+      console.log('Acessando atributos da Tag:', img.getAttribute('src'))/*Acessando o atributo -
+      'src' da tag 'img', Outra opção seria: */
+      console.log('src: ', img.src)
+
+      console.log('Alt', img.alt)
+
+      console.log('----------Elemento "img" ..........')
+      console.log('NodeType', img.nodeType)// 1 = elemento, 2 = atributo ...checar -> https://www.w3schools.com/jsref/prop_node_nodetype.asp
+      console.log('NodeName', img.nodeName)// img neste caso
+
+      //Pegando um atributo
+      console.log('----------Atributo "src" ..........')
+      const src = img.getAttributeNode('src') /*getAttribute me entrega o valor presente no atributo;
+      getAttributeNode me entrega o 'nó' que representa este atributo*/
+      console.log('NodeType', src.nodeType)
+      console.log('NodeName', src.nodeName)
+      console.log('NodeValue', src.nodeValue)
+
+      //Links
+      console.log('----------Elemento "a" ..........')
+      const link = document.querySelector('a')
+      console.log('href', link.href)
+      console.log('FirstChild.nodeType', link.firstChild.nodeType)// 3 -> texto
+
+      //link.firstChild.nodeValue = 'Matheus' ou link.innerHTML = 'Matheus' -> altera o texto dentro do 'a'
+    </script>
+</body>
+</html>

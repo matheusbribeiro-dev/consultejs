@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul') //Selecionando a ul dentro da div
+        console.log(lista.parentNode)//Mostrando o pai da ul
+        console.log(lista.childNodes)//Os filhos da ul(O problema desta abordagem é que ela trás os espaços de indentação também)
+
+        //Pegando o primeiro elemento da lista
+        const primeiro = lista.firstChild
+        console.log(primeiro)
+        console.log(primeiro.nextSibling)//selecionando o irmão de primeiro, ou seja, o elemento logo dps dele
+
+        const ultimo = lista.lastChild//Selecionando o ultimo elemento
+        console.log(ultimo)
+        console.log(ultimo.previousSibling)//Elemento anterior a 'ultimo'
+
+        console.log(lista.children)/*Com essa abordagem se seleciona os filhos(sem textos de espaços)
+        Porém o retorno é em HTMLcoletions*/
+
+        console.log(lista.firstElementChild)//Primeiro elemento filho
+        console.log(lista.lastElementChild)//ultimo elemento filho
+
+        console.log(lista.parentNode.previousElementSibling)//Elemento anterior 
+        console.log(lista.parentNode.nextElementSibling)//Elemento posterior 
+
+        console.log('Uma melhor abordagem:',document.querySelectorAll('div ul li'))//Uma melhor estrategia para selecionar os Li's
+    </script>
+</body>
+
+</html>

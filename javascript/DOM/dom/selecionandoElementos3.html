@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <!--q e hl são parâmetros cujo a url do google suporta: q= valor da pesquisa hl= lingua do host-->
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Digite o termo...">
+        <select name="hl">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+    <script>
+        console.log(document.forms)/*Imprimindo no console
+        a selção dos forms presentes na pag, retorna um array com os forms do tipo HTMLcoletions*/
+
+        console.log(document.forms[0])//Mostrando o primeiro formulário presente no array
+
+        console.log(document.pesquisa)//Imprimindo o elemento que tenha o name="pesquisa"
+
+        console.log('Pegando o input no form:', document.pesquisa.q)
+
+        document.pesquisa.q.value = 'Linux' //Setando o valor no input para 'linux'
+        document.pesquisa.hl.value = 'en-us'
+        console.log(document.pesquisa.hl.selectedIndex)
+    </script>
+</body>
+</html>

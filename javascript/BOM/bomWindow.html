@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+  </head>
+  <body>
+    <button buttonOpen>abrir janela</button>
+    <button buttonClose>Fechar janela</button>
+    <button onclick="window.print()">Imprimir página</button>
+
+    <script>
+      let newWindow 
+
+      function openPopup() {
+       newWindow = window.open(
+          'http://www.google.com.br',
+          'newWindow',
+          'width=200px, height=150px'
+        )
+
+        // Para abrir um endereço em uma nova tab, você pode especificar o valor '_blank' no segundo parâmetro do método.
+        // Observe como fica o código.
+        // window.open('https://www.google.com.br', '_blank');
+      }
+
+      function closePopup() {
+        newWindow.close()
+      }
+
+      class Button {
+        constructor(att) {
+          this.button = document.querySelector(`button[${att}]`)
+        }
+
+        click(functionClick) {
+          this.button.addEventListener("click", functionClick)
+        }
+      }
+
+      const buttonOpen = new Button('buttonOpen')
+      const buttonClose = new Button('buttonClose')
+
+      buttonOpen.click(openPopup)
+      buttonClose.click(closePopup)
+    </script>
+  </body>
+</html>

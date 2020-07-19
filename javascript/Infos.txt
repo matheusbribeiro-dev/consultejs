@@ -1,0 +1,45 @@
+this -> serve para referênciar o dono do contexto de código em execução.
+Porém o this pode variar quando se está utilizando uma function tradicional.
+
+ForEach:
+Por padrão o forEach trabalha com 3 parâmetros. 
+
+A ordem desses parâmetros são: Elemento, índice e o próprio array.
+
+Se você passar apenas um parâmetro na função callback o forEach
+retornará apenas os elementos. Se passar dois o forEach retornará
+os elementos com seus respectivos índices. Caso passe os três a função
+retornará o elemento, o índice e o array propriamente dito.
+
+JSON:
+  Muito mais que um formato de arquivo, JSON ou JavaScript Object Notation,
+  é um modelo para armazenamento e transmissão de informações no formato texto
+  e que é bastante utilizado por aplicações Web
+
+Liguagens estruturadas.Paradigmas:
+  procedural:
+    Programação onde é possível dar nome ao código e reutilizá-lo(função);
+    Funções manipulam dados.
+
+  Orientada a Objetos:
+    Dados que possuem funções dentro deles;
+    Princípios importantes:
+      Abstração:
+        A partir de uma observação, "pegar" um objeto do mundo real e entender como traduzir
+        este objeto para o seu sistema.
+
+      Encapsulamento:
+        Ter detalhes de implementação escondidos e mostrar pra "quem" precisa usar
+        somente uma interface simples que tenha integração com este determinado objeto.
+
+      Herança:
+        Significa que vc recebe atributos e comportamentos de objetos 'pai'
+
+        É basicamente objetos que herdam de outros e/ou um conjunto de objetos ligados que geram
+        outro determinado objeto. Ou seja, a partir da composição de objetos mais simples gerar
+        objetos mais complexos.
+
+      Polimorfismo: Multiplas formas
+        Atribuição de conceitos concretos a outros mais genéricos.
+        Exemplo:
+          Objeto carro pode apontar uma hora para o objeto ferrari outra hora para o objeto Uno

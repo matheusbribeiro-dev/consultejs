@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM - Location</title>
+  </head>
+  <body>
+    <button buttonGoogle>Google</button>
+    <script>
+      /*
+        The window.location object can be used to get the current page address (URL) and to redirect the browser to a new page.
+        for more information: https://www.w3schools.com/js/js_window_location.asp
+      */
+      document.querySelector('button[buttonGoogle]').onclick = () => {
+        window.location.href = 'https://www.google.com'//set in search bar of browser this link
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'>
+	<title>Acessando Atributos #02</title>
+	<link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+	<div>
+		<label for="compras">Compras</label>
+		<ul id="compras" destino='escritório' data-urgencia="5" data-quanto="100">
+			<li>Café</li>
+			<li>Água</li>
+			<li>Copo Descartável</li>
+		</ul>
+	</div>
+	<script>
+		console.log('Elemento ul..........')
+		const lista = document.querySelector('div ul[destino="escritório"]')
+
+		console.log('ChildNodes', lista.childNodes)
+		console.log('Destino', lista.destino)//Propriedade personalizada e portanto... não é possível acessar por notação ponto.
+		console.log('getAttribute destino:', lista.getAttribute('destino'))//Assim é possível acessar mesmo que seja personalizada.
+		console.log('hasAttribute:', lista.hasAttribute('destino'))//hasAttribute -> serve para verfificar se existe um determinado atributo.
+
+		//setando atributo
+		lista.setAttribute('destino', 'empresa')//Primeiro parametro: atributo, segundo: valor
+		lista.setAttribute('status', 'aberto')//Caso não tenha ele insere
+
+		//Removendo atributo
+		lista.removeAttribute('destino')
+
+		//Atributos personalizados com data-
+		console.log(lista.dataset)
+		lista.dataset.urgencia = 4
+
+		//Cuidado
+		const label = document.querySelector('label')
+		console.log(label.for)/*Undefined -> for é uma palavra reservada da linguagem,
+		por isso não é possíve acessar este atributo 'for' com notação ponto. Para fazer isso basta:*/
+		console.log(label.htmlFor)
+		//OU
+		console.log(label.getAttribute('for'))
+	</script>
+</body>
+</html>

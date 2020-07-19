@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <script>
+        //Pegando o body
+        const body = document.querySelector('body')
+
+        //Criando elementos e armazenando numa constante
+        const div1 = document.createElement('div')//Criando um elemento div na pag HTML
+
+        //trabalhando com este elemento
+        div1.classList.add('destaque')//Adicionando a class destaque no elemento criado
+        div1.textContent = 'Primeiro'//Inserindo conteúdo a este elemento
+
+        //Criando mais elementos
+        const div2 = document.createElement('div')
+
+        //trabalhando com eles:
+        div2.setAttribute('wb-atributo', 'valor')//setando atributo na tag div armazenada na constante div2
+        div2.textContent = 'Segundo'//Inserindo conteúdo a este elemento
+
+        // //
+        const div3 = document.createElement('div')
+
+        //criando paragrafo
+        const p = document.createElement('p')
+        p.textContent = 'Terceiro'
+
+        //inserindo no elemento
+        div3.appendChild(p)/*Uma das formas de add, ele adiciona como conteúdo,
+        porém como último elemento filho*/
+
+        //Setando todos os elementos criados no body
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        //Método insert before
+        const texto = document.createTextNode('Antes...')//Um nó de elemento
+        div3.insertBefore(texto, div3.childNodes[0])/*Primeiro parametro: elemento que deseja inserir como filho
+        Segundo: elemento no qual é referenciado para que o elemento que está sendo inserido como filho fique antes dele*/
+
+        //Clonando elementos
+        const div4 = div3.cloneNode(true)//Primeiro parâmetro diz se fará uma clonagem completa(até os filhos) ou não, sendo assim true or false
+        //Inserindo no body
+        body.appendChild(div4)
+        //removendo
+        body.removeChild(div3)
+    </script>
+</body>
+
+</html>

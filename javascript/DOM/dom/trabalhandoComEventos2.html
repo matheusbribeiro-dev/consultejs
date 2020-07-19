@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <style>
+        html, body{
+            overflow-x: hidden;
+        }
+    </style>
+
+</head>
+
+<body class="conteudo exercicio">
+    <div>Elemento</div>
+    <script>
+        const item = document.querySelector('div')
+        item.style.position = 'absolute' //Determinando que a div terá o position: absolute;(CSS)
+
+        item.onmousemove = e => {//atribuindo uma função ao movimento do mouse em cima da div
+            const elemento = e.target
+            item.style.cursor = 'move'
+
+            if(e.buttons) {/*e.buttons -> caso o mause esteja apertado ele fica diferente de 0, 
+            ou seja, true*/
+                elemento.style.top = `${e.clientY - (elemento.clientHeight / 2)}px`//e.clientY -> onde está o mouse no eixo y; elemento.clientHeight -> altura do elemento
+                elemento.style.left = `${e.clientX - (elemento.clientWidth / 2)}px`
+            }
+        }
+    </script>
+</body>

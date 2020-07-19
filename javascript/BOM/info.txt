@@ -1,0 +1,4 @@
+Browser Object Model:
+    forma de se comunicar com recursos do browser através do javaScript
+
+    window engloba o window.document que é o mesmo que DOM, ou seja a BOM é o que engloba a BOM

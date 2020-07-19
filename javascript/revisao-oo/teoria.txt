@@ -1,0 +1,34 @@
+Orientada a Objetos:
+  Estrutura de Dados que possuem métodos(funções) dentro deles, ou seja em OO o dado é quem tem seus respectivos métodos;
+  Princípios importantes:
+    Abstração:
+      Entidade: A partir de uma observação, "pegar" um objeto do mundo real e entender como traduzir
+      este objeto para o seu sistema;
+
+      Identidade: atribuição de uma identidade unica a cada objeto originado da entidade;
+
+      Atributos: Características
+
+      Métodos: Ações a serem realizadas
+
+    Encapsulamento:
+      Ter detalhes de implementação escondidos e mostrar pra "quem" precisa usar
+      somente uma interface simples que tenha integração com este determinado objeto.
+      Encapsular um objeto para torna-lo seguro, determinando o que será enxergado e o que não será.
+      O encapsulamento portanto é uma forma de dar visibilidade para esses atributos e métodos de acordo com
+      as nossas necessidades.
+
+    Herança:
+      Significa que vc recebe atributos e comportamentos de objetos 'pai'
+
+      É basicamente objetos que herdam de outros e/ou um conjunto de objetos ligados que geram
+      outro determinado objeto. Ou seja, a partir da composição de objetos mais simples gerar
+      objetos mais complexos.
+
+    Polimorfismo: Multiplas formas
+      Atribuição de conceitos concretos a outros mais genéricos.
+      Exemplo:
+        Objeto carro pode apontar uma hora para o objeto ferrari outra hora para o objeto Uno
+    ;
+  ;     
+;

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>              
+        //Selecionando elementos de forma flexível, a partir dos seus seletores próprios. ex:
+
+        document.querySelector('#primeiro').classList.add('destaque')/*Adicionando ao elemento
+        de id="primeiro" a class 'destaque'*/
+
+        //O querySelectotAll retorna uma NodeList, diferente dos getElements... que retorna um HTMLColections
+        const selecionar = seletor => {
+            document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))/*querySelectorAll suporta o forEach,
+            mas não as outras callback's como map, reduce, filter etc*/
+        }
+
+        const desSelecionar = seletor => {
+            document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+        }
+
+        //add
+        selecionar('div')
+
+        //remove
+        desSelecionar('*')
+
+        //Testes
+        selecionar('.terceiro.ultimo')
+        desSelecionar('*')
+
+        selecionar(':not(#primeiro)')//Todos que não tem id="primeiro" serão selecionados
+        desSelecionar('*')
+
+        selecionar(':nth-child(1)')//Selecionando o primeiro filho de algum elemento
+        desSelecionar('*')
+
+        selecionar('div:nth-of-type(1)')//Selecionando o primeiro elemento do tipo 'div'
+        desSelecionar('*')
+    </script>
+</body>
+</html>

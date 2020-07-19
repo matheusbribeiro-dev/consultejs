@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM - Screen</title>
+  </head>
+  <body>
+
+
+    <script>
+      /*O obj window.screen fornece atributos referentes a tela do browser, a vizualização do client
+        exemple: width and height of browser client.
+        Consult: https://www.w3schools.com/js/js_window_screen.asp for more information
+
+        O availWidth e height não consideram a TaskBar do navegador
+      */
+      const heightBrowserClient = window.screen.availHeight
+      const widthBrowserClient = window.screen.availWidth
+
+      const bodyOfDom = document.querySelector('body')
+
+      bodyOfDom.innerHTML = `<p>heightBrowserClient = ${heightBrowserClient}</p>
+      <p>widthBrowserClient = ${widthBrowserClient}</p>`
+
+    </script>
+  </body>
+</html>

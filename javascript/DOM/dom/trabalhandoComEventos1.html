@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <!--Formas de trabalhar com eventos-->
+        <!--1. onclick="navegarEm5s(event)"-->
+        <!--2. Forma implicita(olhe o js)-->
+        <!--3. Atributo personalizado-->
+        <a espera-um-pouco href="https://google.com.br">Google</a>
+    </div>
+    <script>
+        //Interceptando um clique - Eventos:
+
+        /*1. Abordagem não recomendada:
+        Para linkar o clique a função, basta chamar no html
+         como atributo do elemento a ser clicado: onclick="nomeDaFunção(event)"
+         neste caso o nome 'event' é obrigatório
+
+        function navegarEm5s(e) {rececendo o evento como parâmetro
+            -> e = evento disparado
+            e.preventDefault() -> Previne que o comportamento padrão ocorra
+            console.log('Saindo em 5s...') -> Fazendo o debug
+
+            setTimeout(() => {
+                const link = e.target ->Target: elemento html que disparou o evento,
+                 armazenando o elemento numa constante
+
+                window.location.href = link.href
+                -> window.location.href retorna o href (URL) da página atual
+                window.location.hostname retorna o nome de domínio do host web
+                window.location.pathname retorna o caminho e o nome de arquivo da página atual
+                window.location.protocol retorna o protocolo web usado (http: ou https:)
+                window.location.assign() carrega um novo document
+            }, 5000)-> setando tempo de espera(5s) pra função acima executar
+        }*/
+
+        /*Função geral*/
+        function navegarEm5s(e) {
+            e.preventDefault()
+            console.log('Debug: Saindo em 5s...')
+
+            setTimeout(() => {
+                const link = e.target
+
+                window.location.href = link.href
+            }, 5000)//5s
+        }
+
+        /*2. Forma implicita
+            const a = document.querySelector('a')// -> pegando a tag 'a' e armazenando numa constante
+            a.onclick = navegarEm5s
+        */
+
+        /*3.*/
+        const a = document.querySelector('[espera-um-pouco]')//-> pegando elemento através de um atributo personalizado
+        a.onclick = navegarEm5s
+
+    </script>
+</body>

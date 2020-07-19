@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>
+        //Selecionando um elemento pelo Id, e adicionando a ele uma class              
+        document.getElementById('primeiro').classList.add('destaque')
+
+        //Pegando as Divs da DOM
+        const divs = document.getElementsByTagName('div')/*Gera um HTMLcoletions,
+         o que pode não ser tão interessante de trabalhar. Dica: Transforme numa array*/
+        //Uma das formas de fazer isso é:
+                        //Pronto, é um array e já posso percorrer
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))/*Percorrendo os elementor em 'divs'
+        e removendo a classe 'destaque'*/
+
+        //Outra forma de transformar num array é:
+        const divsArray = [...divs]//Lembrando que 'divs' é um HTMLcoletions de div's na DOM
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        //Pegando elementos com a class 'ultimo'
+        const ultimosElementos = document.getElementsByClassName('ultimo')/* Retorna um HTMLcoletions
+        com os elementos com class 'ultimo'*/
+        for(let e of ultimosElementos) {//Como é um intereitor... ele consegue percorrer com for
+            e.classList.remove('destaque')//Removendo a classe 'destaque' de todos os ultimos elementos
+        }
+    </script>
+</body>
+</html>
