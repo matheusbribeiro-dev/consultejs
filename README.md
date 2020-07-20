@@ -1,5 +1,5 @@
 # Consulte JS
-**Repositório para consultar a linguagem JavaScript.**
+**Repositório para consultar a linguagem JavaScript baseado no curso da Cod3r.**
 
 ### Ordem dos módulos : 
     1. Fundamentos;
