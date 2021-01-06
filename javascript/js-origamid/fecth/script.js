@@ -51,7 +51,41 @@ imgFetch.then(response => response.blob())
 
     imgDom.src = blobUrl;
   });
-*/
+
+--------------------------------------------------------------------------------
+Requisições HTTP  
 
 
+const url = 'https://jsonplaceholder.typicode.com/posts';
 
+//Options para a requisição
+const options = {
+  method: 'POST',
+  body: '{"title": "JavaScript"}',
+  headers: {
+    "Content-Type": "application/json; charset=utf8"
+  }
+}
+
+fetch(url, options)
+  .then(response => response.json())
+  .then(json => console.log(json)) ;
+  
+--------------------------------------------------------------------------------
+Async e await*/
+
+async function pullData() {
+  try {
+    const responseData = await fetch('dados.json');
+    const jsonData = await responseData.json();
+
+    console.log(jsonData);
+
+  } catch(erro) { 
+    console.log(erro);
+  }
+
+
+}
+
+pullData();
