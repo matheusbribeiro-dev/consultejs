@@ -84,9 +84,7 @@ function initAnimationScroll() {
         
         if(isSectionVisible) {
           section.classList.add('ativo');
-        } else {
-          section.classList.remove('ativo');
-        }
+        } 
       });
     }
     
